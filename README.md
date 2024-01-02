@@ -1,5 +1,6 @@
 # salesanalysis
-Walmart sales data report draft
+Walmart sales data report
+
 PROJECT OVERVIEW
 
 This report endeavors to conduct an in-depth analysis of the sales data extracted from three distinct Walmart branches situated within Myanmar (Burma) with the objective of deriving pertinent and informative insights essential for managerial decision-making. The dataset was sourced from Kaggle, a platform renowned for providing free and anonymous open data for analytical purposes. Specifically, the data was obtained from a Walmart recruitment competition in 2014, albeit the competition is presently inactive.
