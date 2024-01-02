@@ -1,5 +1,5 @@
 # salesanalysis
-Walmart sales data report
+WALMART SALES DATA REPORT
 
 PROJECT OVERVIEW
 
