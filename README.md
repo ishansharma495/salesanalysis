@@ -25,6 +25,10 @@ PART 1: CLEANING, FORMATTING, CREATING TABLE.
 •	Created database.
 •	Reformatted and categorized in MySQL by creating a table with usable column names and removed null data.
 
+
+<summary>
+<details>
+
 ```ruby
 CREATE DATABASE IF NOT EXISTS walmart_sales;
 
@@ -48,9 +52,13 @@ CREATE TABLE IF NOT EXISTS walmartsalesdata(
     rating FLOAT(2, 1)
 );
 ```
+</summary>
+</details>
 
 •	Extracted data to create a time of day, day name, and month name column.
-
+<summary>
+<details>
+	
 ```ruby
 SELECT
 	time,
@@ -91,11 +99,15 @@ UPDATE walmartsalesdata
 SET month_name = MONTHNAME(date);
 
 ```
+</summary>
+</details>
 
 Used the ‘Distinct’ value:
 
 •	Retrieved values such as branch and city location, and unique products sold. 
-
+<summary>
+<details>
+	
 ```ruby
 SELECT 
 	DISTINCT city
@@ -111,6 +123,8 @@ SELECT
 FROM walmartsalesdata;
 
 ```
+</summary>
+</details>
 
 PART 2: REVENUE 
 
@@ -119,7 +133,10 @@ Using the ‘SUM’ function I obtained results such as:
 •	What is the most selling product line.
 •	What is the total revenue by month.
 •	What month had the largest cogs.
-•	What was the largest revenue by product line and city.   
+•	What was the largest revenue by product line and city.  
+
+<summary>
+<details>
 
 ```ruby
 SELECT
@@ -161,12 +178,17 @@ GROUP BY city, branch
 ORDER BY total_revenue;
 
 ```
+</summary>
+</details>
 
 Using the ‘AVG’ function I identified:
 
 •	The product line with the largest VAT as ‘average tax’. 
 •	Average sales rating test to assign a good or bad rating based on ‘average quantity’. 
 •	Using ‘SUM’ and ‘AVG’ functions I answered which branch sold more products than the average sold.
+
+<summary>
+<details>
 
 ```ruby
 SELECT
@@ -199,6 +221,8 @@ GROUP BY branch
 HAVING SUM(quantity) > (SELECT AVG(quantity) FROM walmartsalesdata);
 
 ```
+</summary>
+</details>
 
 PART 3: CUSTOMER DATA AND RATINGS.
 
@@ -209,6 +233,9 @@ Using the ‘COUNT’ function:
 Using the ‘ROUND’ and ‘AVG’ functions:
 
 •	Average rating for each product line. 
+
+<summary>
+<details>
 
 ```ruby
 SELECT
@@ -227,10 +254,14 @@ GROUP BY product_line
 ORDER BY avg_rating DESC;
 
 ```
+</summary>
+</details>
 
 Using the ‘DISTINCT’ function:
 
 •	Identified what the customer types were, and the methods of payments used.
+<summary>
+<details>
 
 ```ruby
 SELECT
@@ -242,6 +273,8 @@ SELECT
 FROM walmartsalesdata;
 
 ```
+</summary>
+</details>
 
 Using the ‘COUNT’ function:
 
@@ -249,6 +282,8 @@ Using the ‘COUNT’ function:
 •	Customer type that buys the most.
 •	What is the gender of most customers. 
 •	What was the gender distribution per branch.
+<summary>
+<details>
 
 ```ruby
 SELECT
@@ -281,11 +316,15 @@ GROUP BY gender
 ORDER BY gender_cnt DESC;
 
 ```
+</summary>
+</details>
 
 Using the ‘AVG’ function:
 
 •	What time customers give the most ratings.
 •	What day of the week has the best average ratings.
+<summary>
+<details>
 
 ```ruby
 SELECT
@@ -321,6 +360,8 @@ GROUP BY day_name
 ORDER BY total_sales DESC;
 
 ```
+</summary>
+</details>
 
 Using the ‘COUNT’, ‘SUM’, ‘ROUND’, and ‘’AVG functions:
 
@@ -329,6 +370,8 @@ Using the ‘COUNT’, ‘SUM’, ‘ROUND’, and ‘’AVG functions:
 •	Which customer type brought the most revenue, 
 •	Which city had the largest tax percent, 
 •	Which customer type pays the most in VAT.
+<summary>
+<details>
 
 ```ruby
 SELECT
@@ -360,8 +403,8 @@ FROM walmartsalesdata
 GROUP BY customer_type
 ORDER BY total_tax;
 ```
-
-
+</summary>
+</details>
 
 CONCLUSION 
 
