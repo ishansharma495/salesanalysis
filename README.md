@@ -15,14 +15,17 @@ However, the limitations encountered primarily stemmed from the inherent charact
 
 ANALYSIS (CODE + VISUAL)
 
-PART 1: CLEANING, FORMATTING, CREATING TABLE.
+PART 1: CLEANING, FORMATTING, CREATING TABLE
 
-•	Downloaded the data in CSV format. 
-•	Cleaned the data in Excel by adjusting date and number formats.
-•	Imported it into MySQL using the import wizard.
+•	Downloaded the data in CSV format
 
-•	Created database.
-•	Reformatted and categorized in MySQL by creating a table with usable column names and removed null data.
+•	Cleaned the data in Excel by adjusting date and number formats
+
+•	Imported it into MySQL using the import wizard
+
+•	Created database
+
+•	Reformatted and categorized in MySQL by creating a table with usable column names and removed null data
 
 
 <summary>
@@ -54,7 +57,7 @@ CREATE TABLE IF NOT EXISTS walmartsalesdata(
 </summary>
 </details>
 
-•	Extracted data to create a time of day, day name, and month name column.
+•	Extracted data to create a time of day, day name, and month name column
 <summary>
 <details>
 	
@@ -103,7 +106,7 @@ SET month_name = MONTHNAME(date);
 
 Used the ‘Distinct’ value:
 
-•	Retrieved values such as branch and city location, and unique products sold. 
+•	Retrieved values such as branch and city location, and unique products sold 
 <summary>
 <details>
 	
@@ -129,10 +132,13 @@ PART 2: REVENUE
 
 Using the ‘SUM’ function I obtained results such as:
 
-•	What is the most selling product line.
-•	What is the total revenue by month.
-•	What month had the largest cogs.
-•	What was the largest revenue by product line and city.  
+•	What is the most selling product line
+
+•	What is the total revenue by month
+
+•	What month had the largest cogs
+
+•	What was the largest revenue by product line and city  
 
 <summary>
 <details>
@@ -182,9 +188,11 @@ ORDER BY total_revenue;
 
 Using the ‘AVG’ function I identified:
 
-•	The product line with the largest VAT as ‘average tax’. 
-•	Average sales rating test to assign a good or bad rating based on ‘average quantity’. 
-•	Using ‘SUM’ and ‘AVG’ functions I answered which branch sold more products than the average sold.
+•	The product line with the largest VAT as ‘average tax’ 
+
+•	Average sales rating test to assign a good or bad rating based on ‘average quantity’ 
+
+•	Using ‘SUM’ and ‘AVG’ functions I answered which branch sold more products than the average sold
 
 <summary>
 <details>
@@ -223,15 +231,15 @@ HAVING SUM(quantity) > (SELECT AVG(quantity) FROM walmartsalesdata);
 </summary>
 </details>
 
-PART 3: CUSTOMER DATA AND RATINGS.
+PART 3: CUSTOMER DATA AND RATINGS
 
 Using the ‘COUNT’ function:
 
-•	Most common product was by gender. 
+•	Most common product was by gender 
 
 Using the ‘ROUND’ and ‘AVG’ functions:
 
-•	Average rating for each product line. 
+•	Average rating for each product line 
 
 <summary>
 <details>
@@ -258,7 +266,8 @@ ORDER BY avg_rating DESC;
 
 Using the ‘DISTINCT’ function:
 
-•	Identified what the customer types were, and the methods of payments used.
+•	Identified what the customer types were, and the methods of payments used
+
 <summary>
 <details>
 
@@ -278,9 +287,13 @@ FROM walmartsalesdata;
 Using the ‘COUNT’ function:
 
 •	Most common customer type was (member vs non-member)
-•	Customer type that buys the most.
-•	What is the gender of most customers. 
-•	What was the gender distribution per branch.
+
+•	Customer type that buys the most
+
+•	What is the gender of most customers
+
+•	What was the gender distribution per branch
+
 <summary>
 <details>
 
@@ -320,8 +333,10 @@ ORDER BY gender_cnt DESC;
 
 Using the ‘AVG’ function:
 
-•	What time customers give the most ratings.
-•	What day of the week has the best average ratings.
+•	What time customers give the most ratings
+
+•	What day of the week has the best average ratings
+
 <summary>
 <details>
 
@@ -364,11 +379,16 @@ ORDER BY total_sales DESC;
 
 Using the ‘COUNT’, ‘SUM’, ‘ROUND’, and ‘’AVG functions:
 
-•	Which day of the week had the best ratings per branch, 
-•	The number of sales made at each time of day, 
-•	Which customer type brought the most revenue, 
-•	Which city had the largest tax percent, 
-•	Which customer type pays the most in VAT.
+•	Which day of the week had the best ratings per branch 
+
+•	The number of sales made at each time of day 
+
+•	Which customer type brought the most revenue 
+
+•	Which city had the largest tax percent 
+
+•	Which customer type pays the most in VAT
+
 <summary>
 <details>
 
