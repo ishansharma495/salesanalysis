@@ -13,7 +13,7 @@ Additionally, SQL's code exhibited a higher degree of clarity, enhancing its ove
 However, the limitations encountered primarily stemmed from the inherent characteristics of the dataset itself. Issues such as unconventional column names, diverse date and number formats, and a restricted array of columns posed challenges. Despite these limitations, proactive data cleaning measures and supplementing available information facilitated the mitigation of these issues. Leveraging multiple programs enabled a more exhaustive analysis and circumvented the constraints imposed by the dataset's inherent shortcomings.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**ANALYSIS (CODE + VISUAL)**
+**ANALYSIS**
 
 **PART 1: CLEANING, FORMATTING, CREATING TABLE**
 
