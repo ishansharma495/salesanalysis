@@ -245,7 +245,7 @@ HAVING SUM(quantity) > (SELECT AVG(quantity) FROM walmartsalesdata);
 
 Using the ‘COUNT’ function:
 
-•	Most common product was by gender 
+•	Most common product by gender 
 
 Using the ‘ROUND’ and ‘AVG’ functions:
 
