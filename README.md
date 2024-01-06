@@ -1,21 +1,21 @@
 # WALMART SALES DATA REPORT
 
-PROJECT OVERVIEW
+**PROJECT OVERVIEW**
 
 This report endeavors to conduct an in-depth analysis of the sales data extracted from three distinct Walmart branches situated within Myanmar (Burma) with the objective of deriving pertinent and informative insights essential for managerial decision-making. The dataset was sourced from Kaggle, a platform renowned for providing free and anonymous open data for analytical purposes. Specifically, the data was obtained from a Walmart recruitment competition in 2014, albeit the competition is presently inactive.
 The rationale behind selecting this dataset was its provision of a compact yet practical set of data, necessitating comprehensive data cleansing and querying prior to visualization. The approach to analyzing this dataset comprised two fundamental segments. The initial phase entailed data cleansing and addressing queries related to revenue generation, whereas the subsequent phase focused on customer-related data and evaluations.
 The data underwent thorough cleansing and formatting procedures within Microsoft Excel, followed by extensive querying performed through MySQL. Finally, the visualization of the derived insights was executed using Microsoft PowerBI, enabling the creation of comprehensive visual representations for enhanced comprehension and strategic decision-making.
 
-HIGHLIGHTS/ LIMITATIONS
+**HIGHLIGHTS/ LIMITATIONS**
 
 The advantages I encountered while utilizing MySQL were primarily centered around its user-friendly interface, rapid processing capabilities, and enhanced presentation of data. In contrast to Excel, SQL offered a multitude of straightforward yet robust formulas, significantly amplifying the efficiency in obtaining desired outcomes. SQL demonstrated expedited functionality, with concise formulas facilitating prompt generation of results. The seamless interoperability between SQL and PowerBI furthered the efficiency, ensuring swift data transfer, and simplifying the overall process.
 Additionally, SQL's code exhibited a higher degree of clarity, enhancing its overall presentation, and enabling quick identification of errors. Notably, the querying process in SQL eliminated the need for manual sifting through extensive datasets, thereby streamlining operations.
 However, the limitations encountered primarily stemmed from the inherent characteristics of the dataset itself. Issues such as unconventional column names, diverse date and number formats, and a restricted array of columns posed challenges. Despite these limitations, proactive data cleaning measures and supplementing available information facilitated the mitigation of these issues. Leveraging multiple programs enabled a more exhaustive analysis and circumvented the constraints imposed by the dataset's inherent shortcomings.
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+**ANALYSIS (CODE + VISUAL)**
 
-ANALYSIS (CODE + VISUAL)
-
-PART 1: CLEANING, FORMATTING, CREATING TABLE
+**PART 1: CLEANING, FORMATTING, CREATING TABLE**
 
 •	Downloaded the data in CSV format
 
@@ -56,6 +56,8 @@ CREATE TABLE IF NOT EXISTS walmartsalesdata(
 ```
 </summary>
 </details>
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 •	Extracted data to create a time of day, day name, and month name column
 <summary>
@@ -104,6 +106,8 @@ SET month_name = MONTHNAME(date);
 </summary>
 </details>
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Used the ‘Distinct’ value:
 
 •	Retrieved values such as branch and city location, and unique products sold 
@@ -128,7 +132,9 @@ FROM walmartsalesdata;
 </summary>
 </details>
 
-PART 2: REVENUE 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**PART 2: REVENUE**
 
 Using the ‘SUM’ function I obtained results such as:
 
@@ -186,6 +192,8 @@ ORDER BY total_revenue;
 </summary>
 </details>
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Using the ‘AVG’ function I identified:
 
 •	The product line with the largest VAT as ‘average tax’ 
@@ -231,7 +239,9 @@ HAVING SUM(quantity) > (SELECT AVG(quantity) FROM walmartsalesdata);
 </summary>
 </details>
 
-PART 3: CUSTOMER DATA AND RATINGS
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**PART 3: CUSTOMER DATA AND RATINGS**
 
 Using the ‘COUNT’ function:
 
@@ -264,6 +274,8 @@ ORDER BY avg_rating DESC;
 </summary>
 </details>
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Using the ‘DISTINCT’ function:
 
 •	Identified what the customer types were, and the methods of payments used
@@ -283,6 +295,8 @@ FROM walmartsalesdata;
 ```
 </summary>
 </details>
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Using the ‘COUNT’ function:
 
@@ -331,6 +345,8 @@ ORDER BY gender_cnt DESC;
 </summary>
 </details>
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Using the ‘AVG’ function:
 
 •	What time customers give the most ratings
@@ -376,6 +392,8 @@ ORDER BY total_sales DESC;
 ```
 </summary>
 </details>
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Using the ‘COUNT’, ‘SUM’, ‘ROUND’, and ‘’AVG functions:
 
@@ -424,6 +442,8 @@ ORDER BY total_tax;
 ```
 </summary>
 </details>
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 CONCLUSION 
 
